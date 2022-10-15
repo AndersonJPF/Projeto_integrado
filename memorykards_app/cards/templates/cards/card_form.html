@@ -2,16 +2,16 @@
 
 {% block content %}
     {% if card %}
-    <h2>✏️ Edit Card</h2>
+    <h2>✏️ Editar Cartão</h2>
     {% else %}
-    <h2>✨ Create New Card</h2>
+    <h2>✨ Criar Novo Cartão</h2>
     {% endif %}
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Save Card">
+        <input type="submit" value="Salvar Cartão">
     </form>
     <a href="{% url 'card-list' %}">
-        Cancel
+        Cancelar
     </a>
 {% endblock %}

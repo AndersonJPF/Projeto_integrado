@@ -11,11 +11,11 @@ from .forms import CardCheckForm
 
 class CardListView(ListView):
     model = Card
-    queryset = Card.objects.all().order_by("box", "-date_created")
+    queryset = Card.objects.all().order_by("nivel", "-date_created")
 
 class CardCreateView(CreateView):
     model = Card
-    fields = ["question", "answer", "box"]
+    fields = ["pergunta", "resposta", "nivel"]
     success_url = reverse_lazy("card-create")
 
 class CardUpdateView(CardCreateView, UpdateView):
@@ -26,7 +26,7 @@ class BoxView(CardListView):
     form_class = CardCheckForm
 
     def get_queryset(self):
-        return Card.objects.filter(box=self.kwargs["box_num"])
+        return Card.objects.filter(nivel=self.kwargs["box_num"])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

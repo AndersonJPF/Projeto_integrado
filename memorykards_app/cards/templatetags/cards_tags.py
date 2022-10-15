@@ -8,7 +8,7 @@ register = template.Library()
 def boxes_as_links():
     boxes = []
     for box_num in BOXES:
-        card_count = Card.objects.filter(box=box_num).count()
+        card_count = Card.objects.filter(nivel=box_num).count()
         boxes.append({
             "number": box_num,
             "card_count": card_count,

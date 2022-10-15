@@ -9,7 +9,7 @@ urlpatterns = [
         name="card-list"
     ),
     path(
-        "new",
+        "novo",
         views.CardCreateView.as_view(),
         name="card-create"
     ),
@@ -19,8 +19,8 @@ urlpatterns = [
         name="card-update"
     ),
     path(
-        "box/<int:box_num>",
+        "nivel/<int:box_num>",
         views.BoxView.as_view(),
-        name="box"
+        name="nivel"
     ),
 ]
